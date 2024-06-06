@@ -2,6 +2,7 @@
 // My MetaPress Plugin
 
 import packageJson from '../package.json'
+import WiggleBonesModifier from './WiggleBonesModifier'
 
 export default class MyMetaPressPlugin {
 
@@ -10,14 +11,12 @@ export default class MyMetaPressPlugin {
     name            = packageJson.metapress?.name || packageJson.name
     description     = packageJson.metapress?.description || packageJson.description
     version         = packageJson.version
-    provides        = [ ]
+    provides        = [ 'modifier:wiggle-bones' ]
     requires        = [ ]
 
-    /** Called on load */
-    onLoad() {
-
-        console.log(`Hello from ${this.name}!`)
-
+    /** Create modifiers */
+    createModifier(type) {
+        if (type == 'wiggle-bones') return new WiggleBonesModifier()
     }
 
 }
