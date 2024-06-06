@@ -12,7 +12,7 @@ export default class MyMetaPressPlugin {
     description     = packageJson.metapress?.description || packageJson.description
     version         = packageJson.version
     provides        = [ 'modifier:wiggle-bones' ]
-    requires        = [ ]
+    requires        = [ 'entities', 'renderer' ]
 
     /** Create modifiers */
     createModifier(type) {
