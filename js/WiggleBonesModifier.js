@@ -6,9 +6,6 @@ export default class WiggleBonesModifier {
     name = 'Wiggle Bones'
     description = `Uses the Wiggle library to animate the skeleton of a model.`
     icon = require('./bone.svg')
-    // settigns = [
-    //     { type: 'description', name: }
-    // ]
 
     /** Called on load */
     async onLoad() {
@@ -34,10 +31,11 @@ export default class WiggleBonesModifier {
     /** Called on unload */
     async onUnload() {
 
-        // Destroy wiggle rig
-        this.wiggleRig?.destroy()
+        // Destroy wiggle rig ... note that the wiggle rig has a reset method according to the docs,
+        // but doesn't seem to exist in reality...
+        this.wiggleRig?.reset?.()
         this.wiggleRig = null
-
+        
     }
 
 }

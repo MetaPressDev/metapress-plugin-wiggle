@@ -1,6 +1,6 @@
 {
     "name": "metapress-plugin-wiggle",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Integrates the wiggle.three.tools library.",
     "main": "js/loader.js",
     "private": true,
